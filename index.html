@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pro Invoice Billing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>📄 Invoice Dashboard</h1>
+    </header>
+
+    <section class="invoice-card">
+      <div class="invoice-header">
+        <input type="text" id="clientName" placeholder="Client Name" />
+        <input type="date" id="invoiceDate" />
+      </div>
+
+      <table class="invoice-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Qty</th>
+            <th>Price (₹)</th>
+            <th>Total (₹)</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Rows added via JS -->
+        </tbody>
+      </table>
+
+      <button class="add-btn" onclick="addItemRow()">+ Add Item</button>
+
+      <div class="totals">
+        <p>Subtotal: ₹<span id="subtotal">0.00</span></p>
+        <p>Tax (18%): ₹<span id="tax">0.00</span></p>
+        <h3>Total: ₹<span id="grandTotal">0.00</span></h3>
+      </div>
+
+      <div class="actions">
+        <button onclick="printInvoice()" class="print-btn">🖨️ Print</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
